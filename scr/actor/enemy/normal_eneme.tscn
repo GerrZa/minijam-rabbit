@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqmqeyfk78hlf"]
+
+[ext_resource type="Script" uid="uid://26do3nhmfnao" path="res://scr/actor/enemy/normal_eneme.gd" id="1_dak70"]
+[ext_resource type="Texture2D" uid="uid://dx5eryjyjmtwt" path="res://asset/ene/wolf.png" id="2_dak70"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dak70"]
+radius = 7.0
+height = 22.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_os6aq"]
+height = 28.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dpmmj"]
+radius = 8.0
+
+[node name="NormalEneme" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_dak70")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dak70")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(1, -13)
+texture = ExtResource("2_dak70")
+
+[node name="ene_check" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ene_check"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_os6aq")
+
+[node name="hurt_area" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hurt_area"]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_dpmmj")

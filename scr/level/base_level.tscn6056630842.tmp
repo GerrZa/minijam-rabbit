@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5ecvuuvncec4"]
+
+[ext_resource type="PackedScene" uid="uid://reky5ignx1fi" path="res://scr/actor/rabbit/rabbit.tscn" id="1_8kx48"]
+[ext_resource type="Script" uid="uid://dtlc1cstapmpc" path="res://scr/level/base_level.gd" id="1_8n8be"]
+[ext_resource type="PackedScene" uid="uid://dfn1v542y2us6" path="res://scr/actor/nemesis/nemesis.tscn" id="2_4y1mb"]
+[ext_resource type="PackedScene" uid="uid://dqmqeyfk78hlf" path="res://scr/actor/enemy/normal_eneme.tscn" id="3_5d48q"]
+
+[node name="BaseLevel" type="Node2D"]
+script = ExtResource("1_8n8be")
+
+[node name="Rabbit" parent="." instance=ExtResource("1_8kx48")]
+unique_name_in_owner = true
+position = Vector2(246, 165)
+
+[node name="nemesis_position" type="Node2D" parent="."]
+
+[node name="nemesis_pos_0" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(23, 110)
+
+[node name="nemesis_pos_1" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(73, 40)
+
+[node name="nemesis_pos_8" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(172, 18)
+
+[node name="nemesis_pos_2" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(287, 19)
+
+[node name="nemesis_pos_9" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(372, 33)
+
+[node name="nemesis_pos_3" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(433, 87)
+
+[node name="nemesis_pos_10" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(447, 145)
+
+[node name="nemesis_pos_4" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(432, 239)
+
+[node name="nemesis_pos_11" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(390, 295)
+
+[node name="nemesis_pos_5" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(292, 309)
+
+[node name="nemesis_pos_6" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(196, 312)
+
+[node name="nemesis_pos_12" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(121, 304)
+
+[node name="nemesis_pos_7" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(48, 275)
+
+[node name="nemesis_pos_13" type="Marker2D" parent="nemesis_position" groups=["neme_pos"]]
+position = Vector2(21, 191)
+
+[node name="Nemesis" parent="." instance=ExtResource("2_4y1mb")]
+position = Vector2(467, -2)
+
+[node name="Nemesis3" parent="." instance=ExtResource("2_4y1mb")]
+position = Vector2(460, 335)
+
+[node name="NormalEneme" parent="." instance=ExtResource("3_5d48q")]
+position = Vector2(473, 200)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
