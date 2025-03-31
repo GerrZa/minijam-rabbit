@@ -1,7 +1,7 @@
 extends Node2D
 
 var spawn_t_range = Vector2(2,5)
-var spawn_n_range = Vector2(2,3)
+var spawn_n_range = Vector2(4,7)
 
 var time = 0
 

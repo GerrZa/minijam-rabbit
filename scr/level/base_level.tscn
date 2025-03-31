@@ -81,6 +81,10 @@ position = Vector2(159, 44)
 z_index = 5
 position = Vector2(468, 15)
 
+[node name="Nemesis4" parent="." instance=ExtResource("2_4y1mb")]
+z_index = 5
+position = Vector2(447, 311)
+
 [node name="ene_spawn_timer" type="Timer" parent="."]
 one_shot = true
 
